@@ -7,3 +7,6 @@ git commit -m "Added .gitignore"
 git push origin main
 npm install
 npm start
+git add src/App.js
+git commit -m "Updated App.js for cleaner UI"
+git push origin main
