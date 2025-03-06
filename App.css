@@ -1,0 +1,72 @@
+/* src/App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app-container {
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+}
+
+/* Header */
+.header {
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  color: #007bff;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Seksioni kryesor */
+.content {
+  margin: 20px 0;
+}
+
+.content h2 {
+  color: #333;
+}
+
+.content p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Butoni CTA */
+.cta-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+.footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #777;
+}
