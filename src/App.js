@@ -1,67 +1,34 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import "./App.css";
+import React, { useState } from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [message, setMessage] = useState("Ultrawebthinking 🚀");
-  const [darkMode, setDarkMode] = useState(false);
+    const [count, setCount] = useState(0);
+    const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    // Ndryshojmë klasën e `body` për të aplikuar temën
-    if (darkMode) {
-      document.body.classList.add("dark");
-      document.body.classList.remove("light");
-    } else {
-      document.body.classList.add("light");
-      document.body.classList.remove("dark");
-    }
-  }, [darkMode]);
+    const handleClick = () => {
+        setCount(count + 1);
+    };
 
-  const increaseCount = () => {
-    setCount(count + 1);
-  };
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+    };
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
-
-  return (
-    <motion.div 
-      className="container"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-    >
-      <motion.h1 className="title">{message}</motion.h1>
-      <p>Ke klikuar <strong>{count}</strong> herë!</p>
-
-      <input 
-        type="text" 
-        className="input"
-        placeholder="Ndrysho mesazhin..."
-        onChange={(e) => setMessage(e.target.value)}
-      />
-
-      <motion.button 
-        className="btn"
-        whileHover={{ scale: 1.1, backgroundColor: "#ff4500" }}
-        whileTap={{ scale: 0.9 }}
-        onClick={increaseCount}
-      >
-        Kliko këtu
-      </motion.button>
-
-      <motion.button 
-        className="btn theme-toggle"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={toggleTheme}
-      >
-        {darkMode ? "Kalo në Light Mode 🌞" : "Kalo në Dark Mode 🌙"}
-      </motion.button>
-    </motion.div>
-  );
+    return (
+        <div className={`app-container ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+            <div className="content-box">
+                <h1>Ultrawebthinking</h1>
+                <p className="message">Ke klikuar <b>{count}</b> herë!</p>
+                <div className="button-container">
+                    <button className="button click-button" onClick={handleClick}>
+                        Kliko këtu
+                    </button>
+                    <button className="button mode-button" onClick={toggleDarkMode}>
+                        {darkMode ? "Kalo në Light Mode 🌞" : "Kalo në Dark Mode 🌙"}
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
